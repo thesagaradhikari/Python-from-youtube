@@ -1,50 +1,140 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+}
+
+.navbar {
     display: flex;
+    justify-content: space-between; /* This will push the buttons to the edges */
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+}
+
+.left-button {
+    margin-right: auto; /* Align the left button */
+}
+
+.right-button {
+    margin-left: auto; /* Align the right button */
+}
+
+.book-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    background: url('i1.jpg') no-repeat center center/cover;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-section.blurred {
+    filter: blur(8px);
+    opacity: 0.7;
+}
+
+.hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Form Section */
+.form-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hide form initially */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .container {
-    background-color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.form-group {
+    margin-bottom: 15px;
 }
 
 label {
-    margin: 10px 0 5px;
-    color: #555;
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
 }
 
-input, select, button {
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
 }
